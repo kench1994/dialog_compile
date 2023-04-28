@@ -90,7 +90,7 @@ package("dialog")
 		print(buildenvs)
 		os.vrunv("./configure", configs)
 		io.replace("makefile", "LIBS		=", "LIBS    = -lncursesw -ltinfow -lticw -lpanelw -lmenuw -lformw")
-		io.replace("makefile", "EXTRA_CFLAGS	=", "CPPFLAGS    += -g2 -DHAVE_COLOR")
+		io.replace("makefile", "EXTRA_CFLAGS	=", "CPPFLAGS    += -DHAVE_COLOR")
 		os.vrunv("make -j8", {envs = buildenvs})
 
 		os.cp("dialog", package:installdir("bin"))
