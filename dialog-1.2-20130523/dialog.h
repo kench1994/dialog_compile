@@ -830,20 +830,20 @@ typedef struct mseRegion {
     struct mseRegion *next;
 } mseRegion;
 
-#if defined(NCURSES_MOUSE_VERSION)
+// #if defined(NCURSES_MOUSE_VERSION)
 
-#define	mouse_open() mousemask(BUTTON1_CLICKED, (mmask_t *) 0)
-#define	mouse_close() mousemask(0, (mmask_t *) 0)
+// #define	mouse_open() mousemask(BUTTON1_CLICKED, (mmask_t *) 0)
+// #define	mouse_close() mousemask(0, (mmask_t *) 0)
 
-extern mseRegion * dlg_mouse_mkregion (int /*y*/, int /*x*/, int /*height*/, int /*width*/, int /*code*/);
-extern void dlg_mouse_free_regions (void);
-extern void dlg_mouse_mkbigregion (int /*y*/, int /*x*/, int /*height*/, int /*width*/, int /*code*/, int /*step_x*/, int /*step_y*/, int /*mode*/);
-extern void dlg_mouse_setbase (int /*x*/, int /*y*/);
-extern void dlg_mouse_setcode (int /*code*/);
+// extern mseRegion * dlg_mouse_mkregion (int /*y*/, int /*x*/, int /*height*/, int /*width*/, int /*code*/);
+// extern void dlg_mouse_free_regions (void);
+// extern void dlg_mouse_mkbigregion (int /*y*/, int /*x*/, int /*height*/, int /*width*/, int /*code*/, int /*step_x*/, int /*step_y*/, int /*mode*/);
+// extern void dlg_mouse_setbase (int /*x*/, int /*y*/);
+// extern void dlg_mouse_setcode (int /*code*/);
 
-#define USE_MOUSE 1
+// #define USE_MOUSE 1
 
-#else
+// #else
 
 #define	mouse_open() /*nothing*/
 #define	mouse_close() /*nothing*/
@@ -855,7 +855,7 @@ extern void dlg_mouse_setcode (int /*code*/);
 
 #define USE_MOUSE 0
 
-#endif
+//#endif
 
 extern mseRegion *dlg_mouse_region (int /*y*/, int /*x*/);
 extern mseRegion *dlg_mouse_bigregion (int /*y*/, int /*x*/);
